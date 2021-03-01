@@ -6,6 +6,7 @@
     "plugins":  [        
         ["@babel/plugin-proposal-nullish-coalescing-operator", {}, "unique-name-a"],
         ["@babel/plugin-proposal-optional-chaining", {}, "unique-name-b"],
-        ["@babel/plugin-proposal-class-properties", {}, "unique-name-c"]
+        ["@babel/plugin-proposal-class-properties", {}, "unique-name-c"],
+        ["react-hot-loader/babel", {}, "unique-name-d"]
     ]
 }
