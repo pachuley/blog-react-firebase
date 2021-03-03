@@ -3,18 +3,20 @@ import { Card } from 'antd';
 import { NavLink } from "react-router-dom"
 import "./PostSnippet.css"
 
-function PostSnippet(props) {
+const PostSnippet = (props) => {
     return( 
         <div className="article">
             <Card
                 type="inner"
-                title="Inner Card title"
+                title={props.title}
                 extra=
-                    {<NavLink to={`/post/${id}`}>
+                    {<NavLink to={`/post/${props.id}`}>
                         Read Full Article
                     </NavLink>}
                 >
-                Inner Card content
+                <p>
+                    {props.content}
+                </p>
             </Card>
         </div>
     )
