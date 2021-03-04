@@ -1,6 +1,9 @@
 body {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
     background: #f5f5ef;
     color: #f15156;
     font-family: "Rubik", sans-serif;
@@ -42,4 +45,13 @@ body {
     margin: 0 0 20px 0;
     padding: 0;
     color: #254e70
+  }
+
+  .mainSwitch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    margin-left: 20%;
+    padding: 2rem;
   }
