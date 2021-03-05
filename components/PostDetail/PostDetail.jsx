@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Card } from 'antd';
+import { NavLink } from "react-router-dom"
 import db from "../../firebase"
 import "./PostDetail.css"
 
 function PostDetail(props) {
+
+    console.log(props)
+    console.log(props.id)
 
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
@@ -18,15 +22,17 @@ function PostDetail(props) {
         })
     })
  
-
-
     return( 
         <div>
-            <div className="postHeaderContainer">
+            <div className="headerContainer">
                 <h1>{title}</h1>
             </div>
             <div className="postDetailContainer">
-                <Card>
+                <Card 
+                    extra=
+                        {<NavLink to={`/edit_post/${props.match.params.id}`}>
+                            Edit
+                        </NavLink>}>
                     <p>{content}</p>
                 </Card>
             </div>

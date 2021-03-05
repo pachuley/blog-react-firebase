@@ -3,18 +3,9 @@
     flex-direction: column;
     width: 90%;
     margin: 3rem auto;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
     align-content: center;
-    flex-wrap: wrap;
-}
-
-.postsHeaderContainer {
-    display: flex;
-    width: 100%;
-    font-weight: 600;
-    font-size: x-large;
-    background-color: #e2e2dc;
 }
 
 .site-page-header {
@@ -24,5 +15,13 @@
 
 .postContentContainer {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
+    padding: auto;
+}
+
+.individualPosts {
+    margin: 0 4%;
+    width: 25%
 }

@@ -1,6 +1,9 @@
 body {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
     background: #f5f5ef;
     color: #f15156;
     font-family: "Rubik", sans-serif;
@@ -9,26 +12,26 @@ body {
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
+}
   
-  a {
+a {
     color: #ffc15e;
     transition: 0.5s;
     text-decoration: none;
-  }
+}
   
-  a:hover, a:active, a:focus {
+a:hover, a:active, a:focus {
     color: #ffc15e;
     outline: none;
     text-decoration: none;
-  }
+}
   
-  p {
+p {
     padding: 0;
     margin: 0 0 30px 0;
-  }
+}
   
-  h1 {
+h1 {
   font-family: "Rubik", sans-serif;
   font-weight: 800;
   margin: 0 0 20px 0;
@@ -36,10 +39,26 @@ body {
   color: #254e70
 }
 
-  h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     font-family: "Rubik", sans-serif;
     font-weight: 600;
     margin: 0 0 20px 0;
     padding: 0;
     color: #254e70
-  }
+}
+
+.mainSwitch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    margin-left: 20%;
+    padding: 2rem;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: x-large;
+}

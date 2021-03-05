@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { PageHeader } from 'antd';
 import PostSnippet from "../PostSnippet/PostSnippet"
 import db from "../../firebase"
 import _ from "lodash"
@@ -30,21 +29,20 @@ function PostContainer(props) {
     return(
 
         <div className="postContainer">
-            <div className="postHeaderContainer">
-                <PageHeader
-                    className="site-page-header"
-                    title="Posts"
-                />
+            <div className="headerContainer">
+                <h1>Entries</h1>
             </div>
             <div className="postContentContainer">
                 {   
                     _.map(blogPosts, (article, idx) => (
-                        <PostSnippet 
-                            key={idx}
-                            id={article.id}
-                            title={article.title}
-                            content={article.content.substring(0, 200)+"..."}
-                        />
+                        <div className="individualPosts">
+                            <PostSnippet 
+                                key={idx}
+                                id={article.id}
+                                title={article.title}
+                                content={article.content.substring(0, 200)+"..."}
+                            />
+                        </div>
                     ))    
                 }
             </div>

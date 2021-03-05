@@ -1,0 +1,42 @@
+.navbarContainer {
+  width: 20%;
+  margin: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  min-height: '100vh';
+  background-color: #254e70;
+}
+
+.siderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 0.5rem;
+  width: 90%;
+}
+
+.imgLogo {
+  width: 90%;
+}
+
+.navItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 3rem;
+}
+
+.navItem {
+  margin: 1rem 0;
+}
