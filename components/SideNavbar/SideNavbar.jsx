@@ -18,7 +18,7 @@ function SideNavbar(props) {
                     <NavLink to={`/aboutme`} className="navItem">
                         About me
                     </NavLink>
-                    <NavLink to={`/createpost`} className="navItem">
+                    <NavLink to={`/create_post`} className="navItem">
                         Let's write something!
                     </NavLink>
 

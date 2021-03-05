@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Card } from 'antd';
+import { NavLink } from "react-router-dom"
 import db from "../../firebase"
 import "./PostDetail.css"
 
 function PostDetail(props) {
+
+    console.log(props)
+    console.log(props.id)
 
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
@@ -26,7 +30,7 @@ function PostDetail(props) {
             <div className="postDetailContainer">
                 <Card 
                     extra=
-                        {<NavLink to={`/post/${props.id}`}>
+                        {<NavLink to={`/edit_post/${props.match.params.id}`}>
                             Edit
                         </NavLink>}>
                     <p>{content}</p>

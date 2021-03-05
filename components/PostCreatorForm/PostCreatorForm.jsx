@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router"
 import { Input, Button } from 'antd';
 import db from "../../firebase"
 import "./PostCreatorForm.css";
@@ -11,12 +12,14 @@ function PostCreatorForm(props) {
     const [content, setContent] = useState("")
 
     const onTitleChange = (event) => setTitle(event.target.value)
-
     const onContentChange = (event) => setContent(event.target.value)
+    let history = useHistory()
 
     const onCreatePost = () => {
         let postRef = db.collection("blogPosts")
         let payload = {title, content}
+
+        console.log("Entro")
 
         postRef.add(payload)
             .then(function (doc) {
@@ -25,10 +28,9 @@ function PostCreatorForm(props) {
             .catch(function (e) {
                 console.log(e)
             })
-
         setTitle("")
         setContent("")
-        window.location = "/";
+        history.push("/")
     }
 
     return( 
