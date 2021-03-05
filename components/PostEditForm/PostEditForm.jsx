@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Input, Button } from 'antd';
 import db from "../../firebase"
-import "./PostCreatorForm.css";
+import "./PostEditForm.css";
 
 const { TextArea } = Input
 
-function PostCreatorForm(props) {
+function PostEditForm(props) {
 
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
 
     const onTitleChange = (event) => setTitle(event.target.value)
-
     const onContentChange = (event) => setContent(event.target.value)
 
     const onCreatePost = () => {
@@ -49,4 +48,4 @@ function PostCreatorForm(props) {
         </div>
     )
 }
-export default PostCreatorForm;
+export default PostEditForm;
