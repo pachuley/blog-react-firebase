@@ -33,7 +33,9 @@ function PostDetail(props) {
                         {<NavLink to={`/edit_post/${props.match.params.id}`}>
                             Edit
                         </NavLink>}>
-                    <p>{content}</p>
+                    <p>{content.split("\n").map((paragraph, idx) => {
+                        return <p key={idx}>{paragraph}</p>
+                    })}</p>
                 </Card>
             </div>
         </div>

@@ -15,7 +15,9 @@ const PostSnippet = (props) => {
                     </NavLink>}
                 >
                 <p>
-                    {props.content}
+                    {props.content.split("\n").map((paragraph, idx) => {
+                        return <p key={idx}>{paragraph}</p>
+                    })}
                 </p>
             </Card>
         </div>
