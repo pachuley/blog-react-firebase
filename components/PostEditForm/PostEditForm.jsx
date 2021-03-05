@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Input, Button } from 'antd';
 import db from "../../firebase"
 import { useHistory } from "react-router"
 import "./PostEditForm.css";
 
-const { TextArea } = Input
-
 function PostEditForm(props) {
-
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
 
@@ -36,7 +32,7 @@ function PostEditForm(props) {
             .catch(function (e) {
                 console.log(e)
             })
-            history.push("/")
+        history.push("/")
     }
 
     return( 
@@ -45,15 +41,14 @@ function PostEditForm(props) {
                 <h1>Do you want to change what was on your mind  back then?</h1>
             </div>
             <div className="namePostForm">
-                <Input placeholder="Blog Title" value={title} onChange={onTitleChange}/>
+                <input placeholder="Blog Title" value={title} onChange={onTitleChange}/>
             </div>
             <div className="articlePostForm">
-                <TextArea placeholder="What's up?" rows={10} value={content} onChange={onContentChange}/> 
+                <textarea placeholder="What's up?" rows={10} value={content} onChange={onContentChange}/> 
             </div>
             <div className="submitButtonPostForm">
-                <Button size="large" onClick={onEditPost}>Edit</Button>
+                <button size="large" onClick={onEditPost}>Edit</button>
             </div>
-
         </div>
     )
 }

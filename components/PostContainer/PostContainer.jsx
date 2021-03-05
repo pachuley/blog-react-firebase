@@ -5,12 +5,10 @@ import _ from "lodash"
 import "./PostContainer.css"
 
 function PostContainer(props) {
-
     const [blogPosts, setBlogPosts] = useState([])
 
     useEffect(() => {
         let postsRef = db.collection("blogPosts") 
-
         postsRef
             .get()
             .then(posts => {
@@ -27,24 +25,21 @@ function PostContainer(props) {
     }, [])
 
     return(
-
         <div className="postContainer">
             <div className="headerContainer">
                 <h1>Entries</h1>
             </div>
             <div className="postContentContainer">
-                {   
-                    _.map(blogPosts, (article, idx) => (
-                        <div className="individualPosts">
-                            <PostSnippet 
-                                key={idx}
-                                id={article.id}
-                                title={article.title}
-                                content={article.content.substring(0, 200)+"..."}
-                            />
-                        </div>
-                    ))    
-                }
+                {_.map(blogPosts, (article, idx) => (
+                    <div className="individualPosts">
+                        <PostSnippet 
+                            key={idx}
+                            id={article.id}
+                            title={article.title}
+                            content={article.content.substring(0, 200)+"..."}
+                        />
+                    </div>
+                ))}
             </div>
         </div>
     )
