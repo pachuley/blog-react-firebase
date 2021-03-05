@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router"
-import { Input, Button } from 'antd';
 import db from "../../firebase"
 import "./PostCreatorForm.css";
 
-const { TextArea } = Input
-
 function PostCreatorForm(props) {
-
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
-
     const onTitleChange = (event) => setTitle(event.target.value)
     const onContentChange = (event) => setContent(event.target.value)
     let history = useHistory()
@@ -39,15 +34,14 @@ function PostCreatorForm(props) {
                 <h1>What's on your mind?</h1>
             </div>
             <div className="namePostForm">
-                <Input placeholder="Blog Title" value={title} onChange={onTitleChange}/>
+                <input placeholder="Blog Title" value={title} onChange={onTitleChange}/>
             </div>
             <div className="articlePostForm">
-                <TextArea placeholder="What's up?" rows={10} value={content} onChange={onContentChange}/> 
+                <textarea placeholder="What's up?" rows={10} value={content} onChange={onContentChange}/> 
             </div>
             <div className="submitButtonPostForm">
-                <Button size="large" onClick={onCreatePost}>Submit</Button>
+                <button size="large" onClick={onCreatePost}>Submit</button>
             </div>
-
         </div>
     )
 }
