@@ -25,11 +25,17 @@ function PostCreatorForm(props) {
             .catch(function (e) {
                 console.log(e)
             })
+
+        setTitle("")
+        setContent("")
+        window.location = "/";
     }
 
     return( 
         <div className="postFormContainer">
-            <h1>What's in your mind?</h1>
+            <div className="headerContainer">
+                <h1>What's in your mind?</h1>
+            </div>
             <div className="namePostForm">
                 <Input placeholder="Blog Title" value={title} onChange={onTitleChange}/>
             </div>

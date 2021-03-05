@@ -18,15 +18,17 @@ function PostDetail(props) {
         })
     })
  
-
-
     return( 
         <div>
-            <div className="postHeaderContainer">
+            <div className="headerContainer">
                 <h1>{title}</h1>
             </div>
             <div className="postDetailContainer">
-                <Card>
+                <Card 
+                    extra=
+                        {<NavLink to={`/post/${props.id}`}>
+                            Edit
+                        </NavLink>}>
                     <p>{content}</p>
                 </Card>
             </div>

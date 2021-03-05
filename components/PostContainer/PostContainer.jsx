@@ -30,7 +30,7 @@ function PostContainer(props) {
     return(
 
         <div className="postContainer">
-            <div className="postsHeaderContainer">
+            <div className="headerContainer">
                 <h1>Entries</h1>
             </div>
             <div className="postContentContainer">

@@ -8,13 +8,6 @@
     align-content: center;
 }
 
-.postsHeaderContainer {
-    display: flex;
-    justify-content: center;
-    font-weight: 600;
-    font-size: x-large;
-}
-
 .site-page-header {
     border: 2px solid #254e70;
     width: 100%;

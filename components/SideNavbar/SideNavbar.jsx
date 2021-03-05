@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom"
 import "./SideNavbar.css"
 
@@ -7,13 +7,21 @@ function SideNavbar(props) {
         <div className="navbarContainer">       
             <div class="siderContainer">
                 <div className="logo">
-                    <img src="https://res.cloudinary.com/pachuley/image/upload/v1614811234/adventure_co._ldbxll.png" alt="#" className="imgLogo" />
+                    <NavLink to={`/`}>
+                        <img src="https://res.cloudinary.com/pachuley/image/upload/v1614811234/adventure_co._ldbxll.png" alt="#" className="imgLogo" />
+                    </NavLink>
                 </div>
                 <div className="navItems">
-                  <a href="#">About</a>
-                  <a href="#">Services</a>
-                  <a href="#">Clients</a>
-                  <a href="#">Contact</a>
+                    <NavLink to={`/`} className="navItem">
+                        All the entries
+                    </NavLink>
+                    <NavLink to={`/aboutme`} className="navItem">
+                        About me
+                    </NavLink>
+                    <NavLink to={`/createpost`} className="navItem">
+                        Let's write something!
+                    </NavLink>
+
                 </div>
             </div>
         </div>

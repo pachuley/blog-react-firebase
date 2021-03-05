@@ -36,3 +36,7 @@
   justify-content: center;
   margin: 0 3rem;
 }
+
+.navItem {
+  margin: 1rem 0;
+}
