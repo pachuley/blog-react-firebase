@@ -30,17 +30,27 @@ function PostCreatorForm(props) {
 
     return( 
         <div className="postFormContainer">
-            <div className="headerContainer">
+            <div className="postFormTitle">
                 <h1>What's on your mind?</h1>
+                <hr className="postFormHr"/>
             </div>
-            <div className="namePostForm">
-                <input placeholder="Blog Title" value={title} onChange={onTitleChange}/>
-            </div>
-            <div className="articlePostForm">
-                <textarea placeholder="What's up?" rows={10} value={content} onChange={onContentChange}/> 
-            </div>
-            <div className="submitButtonPostForm">
-                <button size="large" onClick={onCreatePost}>Submit</button>
+            <div className="postForm">
+                <div className="namePostFormContainer">
+                    <input placeholder="Blog Title" 
+                            value={title} 
+                            onChange={onTitleChange} 
+                            className="namePostForm"/>
+                </div>
+                <div className="articlePostFormContainer">
+                    <textarea placeholder="What's up?" 
+                            rows={10} 
+                            value={content} 
+                            onChange={onContentChange} 
+                            className="articlePostForm"/> 
+                </div>
+                <div className="submitButtonPostForm">
+                    <button size="large" onClick={onCreatePost} className="submitButton">Submit</button>
+                </div>
             </div>
         </div>
     )

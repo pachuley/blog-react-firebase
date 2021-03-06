@@ -14,9 +14,9 @@ const PostSnippet = (props) => {
                         return <p key={idx} className="postSnippetParagraph">{paragraph}</p>
                 })}
             </div>
-            <div className="postSnippetReadLink">                   
+            <div>                   
                 {<NavLink to={`/post/${props.id}`}>
-                    <h5>Read Full Article</h5>
+                    <h5 className="postSnippetReadLink">Read Full Article</h5>
                 </NavLink>}                   
             </div>
         </div>

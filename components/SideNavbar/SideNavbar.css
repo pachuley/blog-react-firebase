@@ -1,7 +1,7 @@
 .navbarContainer {
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 15.2%;
   margin: 0;
   position: fixed;
   z-index: 1;
@@ -40,5 +40,5 @@
 
 .navItem {
   margin: 0.5rem 0;
-  color: #ffc15e;
+  color: #dfa447;
 }
