@@ -10,11 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "antd": "^4.13.0",
     "firebase": "^8.2.9",
     "lodash": "^4.17.21",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0"
   },

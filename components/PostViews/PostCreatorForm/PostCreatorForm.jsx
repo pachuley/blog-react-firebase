@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router"
-import db from "../../firebase"
+import db from "../../../firebase"
 import "./PostCreatorForm.css";
 
 function PostCreatorForm(props) {
@@ -36,12 +36,14 @@ function PostCreatorForm(props) {
             </div>
             <div className="postForm">
                 <div className="namePostFormContainer">
+                    <h4>What should it be called?</h4>
                     <input placeholder="Blog Title" 
                             value={title} 
                             onChange={onTitleChange} 
                             className="namePostForm"/>
                 </div>
                 <div className="articlePostFormContainer">
+                    <h4>What happened?</h4>
                     <textarea placeholder="What's up?" 
                             rows={10} 
                             value={content} 

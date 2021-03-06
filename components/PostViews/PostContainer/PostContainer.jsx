@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PostSnippet from "../PostSnippet/PostSnippet"
-import db from "../../firebase"
+import db from "../../../firebase"
 import _ from "lodash"
 import "./PostContainer.css"
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import db from "../../firebase"
+import db from "../../../firebase"
 import { useHistory } from "react-router"
 import "./PostEditForm.css";
 
@@ -43,12 +43,14 @@ function PostEditForm(props) {
             </div>
             <div className="editForm">
                 <div className="nameEditFormContainer">
+                    <h4>What should it be called?</h4>
                     <input placeholder="Blog Title" 
                             value={title} 
                             onChange={onTitleChange} 
                             className="nameEditForm"/>
                 </div>
                 <div className="articleEditFormContainer">
+                    <h4>What happened?</h4>
                     <textarea placeholder="What's new?" 
                             rows={10} 
                             value={content} 
