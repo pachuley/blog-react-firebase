@@ -1,12 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
 import { GiMountaintop, GiBlackFlag, GiAnchor } from "react-icons/gi";
+import LogOut from "../../AccountManagement/LogOut/LogOut"
 import "./SideNavbar.css"
 
-function SideNavbar(props) {      
+function SideNavbar(props) {
+
     return (
         <div className="navbarContainer">       
-            <div class="siderContainer">
+            <div className="siderContainer">
                 <div className="logo">
                     <NavLink to={`/`}>
                         <img src="https://res.cloudinary.com/pachuley/image/upload/v1614811234/adventure_co._ldbxll.png" alt="#" className="imgLogo" />
@@ -30,6 +32,16 @@ function SideNavbar(props) {
                         <NavLink to={`/create_post`}>
                             <h4 className="navItem">New Chapter</h4>
                         </NavLink>
+                    </div>
+                    <div className="navLinkContainer">
+                        {props.user
+                            ?
+                            <LogOut /> 
+                            :
+                            <NavLink to={`/log_in`}>
+                                <h4 className="navItem">Log In</h4>
+                            </NavLink>
+                        }
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import db from "../../../firebase"
 import "./PostCreatorForm.css";
 
 function PostCreatorForm(props) {
+    
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const onTitleChange = (event) => setTitle(event.target.value)
@@ -13,8 +14,6 @@ function PostCreatorForm(props) {
     const onCreatePost = () => {
         let postRef = db.collection("blogPosts")
         let payload = {title, content}
-
-        console.log("Entro")
 
         postRef.add(payload)
             .then(function (doc) {
