@@ -18,21 +18,20 @@ function PostDetail(props) {
     })
  
     return( 
-        <div>
-            <div className="titleContainer">
+        <div className="postDetailContainer">
+            <div className="postDetailTitleContainer">
                 <h1>{title}</h1>
+                <hr className="postDetailHr"/>
             </div>
             <div className="postDetailLink">
                 {<NavLink to={`/edit_post/${props.match.params.id}`}>
-                    Edit
+                    <h4 className="postEditLink">Edit</h4>
                 </NavLink>}
             </div>
-            <div className="postDetailContent">
-                <span>              
-                    {content.split("\n").map((paragraph, idx) => {
-                    return <p key={idx}>{paragraph}</p>
-                    })}
-                </span>           
+            <div className="postDetailContent">             
+                {content.split("\n").map((paragraph, idx) => {
+                return <p key={idx} className="postDetailParagraph">{paragraph}</p>
+                })}        
             </div>
         </div>
     )

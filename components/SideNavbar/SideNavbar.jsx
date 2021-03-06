@@ -12,14 +12,14 @@ function SideNavbar(props) {
                     </NavLink>
                 </div>
                 <div className="navItems">
-                    <NavLink to={`/`} className="navItem">
-                        All the entries
+                    <NavLink to={`/`}>
+                        <h4 className="navItem">Captain's Log</h4>
                     </NavLink>
                     <NavLink to={`/aboutme`} className="navItem">
-                        About me
+                        <h4 className="navItem">About Me</h4>
                     </NavLink>
                     <NavLink to={`/create_post`} className="navItem">
-                        Let's write something!
+                        <h4 className="navItem">New Chapter</h4>
                     </NavLink>
 
                 </div>

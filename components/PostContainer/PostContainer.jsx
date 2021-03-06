@@ -27,7 +27,8 @@ function PostContainer(props) {
     return(
         <div className="postContainer">
             <div className="headerContainer">
-                <h1>Entries</h1>
+                <h1>Captain's log</h1>
+                <hr className="headerHr"/>
             </div>
             <div className="postContentContainer">
                 {_.map(blogPosts, (article, idx) => (

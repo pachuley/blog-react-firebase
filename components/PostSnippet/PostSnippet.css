@@ -1,9 +1,29 @@
-.article {
+.postSnippetContainer {
     display: flex;
     flex-direction: column;
     align-content: center;
     margin-top: 2rem;
-    padding: 0.5rem;
-    border: 2px solid #254e70;
+    padding: 1rem;
+    border: 3px solid #254e70;
     background-color: #e2e2dc;
+}
+
+.postSnippetTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.postSnippetHr {
+    width: 15%;
+    border: 2px solid #f15156;
+    margin-bottom: 0;
+}
+
+.postSnippetParagraph {
+    text-align: justify;
+    margin-bottom: 0.8rem;
 }
