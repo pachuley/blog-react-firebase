@@ -10,6 +10,12 @@
     top: 0;
 }
 
+.editPostTitle{
+    text-align: start;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
 .editFormTitle{
     display: flex;
     flex-direction: column;

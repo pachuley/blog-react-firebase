@@ -43,14 +43,14 @@ function PostEditForm(props) {
             </div>
             <div className="editForm">
                 <div className="nameEditFormContainer">
-                    <h4>What should it be called?</h4>
+                    <h3 className="editPostTitle">What should it be called?</h3>
                     <input placeholder="Blog Title" 
                             value={title} 
                             onChange={onTitleChange} 
                             className="nameEditForm"/>
                 </div>
                 <div className="articleEditFormContainer">
-                    <h4>What happened?</h4>
+                    <h3 className="editPostTitle">What happened?</h3>
                     <textarea placeholder="What's new?" 
                             rows={10} 
                             value={content} 

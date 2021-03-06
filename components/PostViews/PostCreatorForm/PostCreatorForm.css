@@ -39,6 +39,12 @@
     margin-bottom: 0.5rem;
 }
 
+.namePostTitle{
+    text-align: start;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
 .namePostForm{
     margin: 0;
     width: 50rem;

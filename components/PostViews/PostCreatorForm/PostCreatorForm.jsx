@@ -36,14 +36,14 @@ function PostCreatorForm(props) {
             </div>
             <div className="postForm">
                 <div className="namePostFormContainer">
-                    <h4>What should it be called?</h4>
+                    <h3 className="namePostTitle">What should it be called?</h3>
                     <input placeholder="Blog Title" 
                             value={title} 
                             onChange={onTitleChange} 
                             className="namePostForm"/>
                 </div>
                 <div className="articlePostFormContainer">
-                    <h4>What happened?</h4>
+                    <h3 className="namePostTitle">What happened?</h3>
                     <textarea placeholder="What's up?" 
                             rows={10} 
                             value={content} 
