@@ -76,7 +76,7 @@ function SignUp(props) {
                             className="passwordForm"/> 
                 </div>
                 <div className="signUpPasswordContainer">
-                    <h3 className="signupPassword">Please confirm your password</h3>
+                    <h3 className="signUpPassword">Please confirm your password</h3>
                     <input placeholder="Write your new password again" 
                             type="password"
                             required="required"

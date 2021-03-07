@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom"
+import DeleteBtn from "../../Commons/DeleteButton/DeleteBtn"
 import db from "../../../firebase"
 import "./PostDetail.css"
 
@@ -23,11 +24,21 @@ function PostDetail(props) {
                 <h1>{title}</h1>
                 <hr className="postDetailHr"/>
             </div>
-            <div className="postDetailLink">
-                {<NavLink to={`/edit_post/${props.match.params.id}`}>
-                    <h4 className="postEditLink">Edit</h4>
-                </NavLink>}
-            </div>
+
+            {(props.user &&
+                <div className="editLinksContainer"> 
+                    <div className="editLink">
+                        {<NavLink to={`/edit_post/${props.match.params.id}`}>
+                            <h4 className="postEditLink">Edit</h4>
+                        </NavLink>}
+                    </div>
+
+                    <div className="deleteLink">
+                        <DeleteBtn id={props.match.params.id}/>
+                    </div>
+                </div>
+            )}
+            
             <div className="postDetailContent">             
                 {content.split("\n").map((paragraph, idx) => {
                 return <p key={idx} className="postDetailParagraph">{paragraph}</p>

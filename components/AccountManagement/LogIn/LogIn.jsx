@@ -50,7 +50,7 @@ function LogIn(props) {
                             className="passwordForm"/> 
                 </div>
                 <div className="logInButtonContainer">
-                    <button size="large" onClick={onLogIn} className="LogInButton">LogIn</button>
+                    <button size="large" onClick={onLogIn} className="logInButton">LogIn</button>
                     <div className="signUpLinkContainer">
                         {<NavLink to={`/sign_up/`}>
                             <h4 className="signUpLink">If you don't have an Account, create one!</h4>

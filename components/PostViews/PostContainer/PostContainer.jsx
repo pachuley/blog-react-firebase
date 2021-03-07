@@ -11,8 +11,7 @@ function PostContainer(props) {
     useEffect(() => {
         let postsRef = db.collection("blogPosts") 
         postsRef
-            .get()
-            .then(posts => {
+            .onSnapshot(posts => {
                 posts.forEach(post => {
                     let data = post.data()
                     let {id} = post

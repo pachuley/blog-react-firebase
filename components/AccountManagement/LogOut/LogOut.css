@@ -2,3 +2,7 @@
     margin: 0.5rem 0;
     color: #dfa447;
 }
+
+.logOutLink{
+    cursor: pointer;
+}

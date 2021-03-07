@@ -17,9 +17,8 @@ function App() {
   auth.onAuthStateChanged(function (user) {
     if(user) {
       setUser(true)
-      console.log("There's a user logged in")
     } else {
-      console.log("No user signed in currently")
+      setUser(false)
     }
   })
 
@@ -30,7 +29,7 @@ function App() {
         <Switch>
           <Route path="/" exact render={() => <PostContainer />} />
           <Route path="/create_post/" exact render={() => <PostCreatorForm />} />
-          <Route path="/post/:id" render={({ match }) => <PostDetail match={match}/>} />
+          <Route path="/post/:id" render={({ match }) => <PostDetail match={match} user={user}/>} />
           <Route path="/edit_post/:id" render={({ match }) => <PostEditForm match={match}/>} />
           <Route path="/sign_up/" exact render={() => <SignUp />} />      
           <Route path="/log_in/" exact render={() => <LogIn />} />    
