@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import db from "../../firebase"
+import db from "../../../firebase"
 import { useHistory } from "react-router"
 import "./PostEditForm.css";
 
@@ -36,18 +36,30 @@ function PostEditForm(props) {
     }
 
     return( 
-        <div className="postFormContainer">
-            <div className="headerContainer">
-                <h1>Do you want to change what was on your mind  back then?</h1>
+        <div className="editFormContainer">
+            <div className="editFormTitle">
+                <h1>Let's Edit</h1>
+                <hr className="editFormHr"/>
             </div>
-            <div className="namePostForm">
-                <input placeholder="Blog Title" value={title} onChange={onTitleChange}/>
-            </div>
-            <div className="articlePostForm">
-                <textarea placeholder="What's up?" rows={10} value={content} onChange={onContentChange}/> 
-            </div>
-            <div className="submitButtonPostForm">
-                <button size="large" onClick={onEditPost}>Edit</button>
+            <div className="editForm">
+                <div className="nameEditFormContainer">
+                    <h3 className="editPostTitle">What should it be called?</h3>
+                    <input placeholder="Blog Title" 
+                            value={title} 
+                            onChange={onTitleChange} 
+                            className="nameEditForm"/>
+                </div>
+                <div className="articleEditFormContainer">
+                    <h3 className="editPostTitle">What happened?</h3>
+                    <textarea placeholder="What's new?" 
+                            rows={10} 
+                            value={content} 
+                            onChange={onContentChange} 
+                            className="articleEditForm"/> 
+                </div>
+                <div className="submitButtonEditForm">
+                    <button size="large" onClick={onEditPost} className="editButton">Edit</button>
+                </div>
             </div>
         </div>
     )

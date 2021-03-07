@@ -1,0 +1,103 @@
+.signUpContainer{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    top: 0;
+}
+
+.signUpTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-weight: 600;
+    font-size: x-large;
+}
+
+.signUpHr{
+    width: 12%;
+    border: 4px solid #f15156;
+    margin-bottom: 0;
+}
+
+.signUpForm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.signUpEmailContainer{
+    margin: 1rem auto;
+    margin-bottom: 0.5rem;
+}
+
+.signUpEmail{
+    text-align: start;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
+.emailForm{
+    margin: 0;
+    width: 30rem;
+    border: 3px solid #254e70;
+    border-radius: 2px;
+    background-color: #e2e2dc;
+    padding: 1rem 1.5rem;
+    font-size: medium;
+    font-family: "Rubik", sans-serif;
+    color: #f15156;
+}
+
+.signUpPasswordContainer{
+    margin: 1rem auto;
+    margin-bottom: 0.5rem;
+}
+
+.signUpPassword{
+    text-align: start;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
+.passwordForm{
+    margin: 0;
+    width: 30rem;
+    border: 3px solid #254e70;
+    border-radius: 2px;
+    background-color: #e2e2dc;
+    padding: 1rem 1.5rem;
+    font-size: medium;
+    font-family: "Rubik", sans-serif;
+    color: #f15156;
+}
+
+.signUpButtonContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    justify-content: center;
+}
+
+.signUpButton{
+    background-color: #e2e2dc;
+    border: 3px solid #254e70;
+    border-radius: 2px;
+    color: #f15156;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    width: 40%;
+    margin: 1rem auto;
+}

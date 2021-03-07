@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import PostSnippet from "../PostSnippet/PostSnippet"
-import db from "../../firebase"
+import db from "../../../firebase"
 import _ from "lodash"
 import "./PostContainer.css"
 
 function PostContainer(props) {
+    
     const [blogPosts, setBlogPosts] = useState([])
 
     useEffect(() => {
         let postsRef = db.collection("blogPosts") 
         postsRef
-            .get()
-            .then(posts => {
+            .onSnapshot(posts => {
                 posts.forEach(post => {
                     let data = post.data()
                     let {id} = post
@@ -27,7 +27,8 @@ function PostContainer(props) {
     return(
         <div className="postContainer">
             <div className="headerContainer">
-                <h1>Entries</h1>
+                <h1>Captain's log</h1>
+                <hr className="headerHr"/>
             </div>
             <div className="postContentContainer">
                 {_.map(blogPosts, (article, idx) => (

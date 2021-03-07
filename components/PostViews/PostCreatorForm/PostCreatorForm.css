@@ -1,0 +1,97 @@
+.postFormContainer{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    top: 0;
+}
+
+.postFormTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-weight: 600;
+    font-size: x-large;
+}
+
+.postFormHr{
+    width: 12%;
+    border: 4px solid #f15156;
+    margin-bottom: 0;
+}
+
+.postForm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+.namePostFormContainer{
+    margin: 1rem auto;
+    margin-bottom: 0.5rem;
+}
+
+.namePostTitle{
+    text-align: start;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+
+.namePostForm{
+    margin: 0;
+    width: 50rem;
+    border: 3px solid #254e70;
+    border-radius: 2px;
+    background-color: #e2e2dc;
+    padding: 1rem 1.5rem;
+    font-size: medium;
+    font-family: "Rubik", sans-serif;
+    color: #f15156;
+}
+
+.articlePostFormContainer{
+    margin: 1rem auto;
+    margin-bottom: 0.5rem;
+}
+
+.articlePostForm{
+    margin: 0;
+    width: 50rem;
+    border: 3px solid #254e70;
+    border-radius: 2px;
+    background-color: #e2e2dc;
+    padding: 1rem 1.5rem;
+    font-size: medium;
+    font-family: "Rubik", sans-serif;
+    color: #f15156;
+}
+
+.articlePostForm:active{
+    border: 3px solid #254e70;
+    border-radius: 2px;
+}
+
+.submitButtonPostForm{
+    margin: 1rem auto;
+}
+
+.submitButton{
+    background-color: #e2e2dc;
+    border: 3px solid #254e70;
+    border-radius: 2px;
+    color: #f15156;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+}

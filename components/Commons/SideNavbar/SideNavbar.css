@@ -1,5 +1,7 @@
 .navbarContainer {
-  width: 20%;
+  display: flex;
+  flex-direction: column;
+  width: 15.2%;
   margin: 0;
   position: fixed;
   z-index: 1;
@@ -15,28 +17,42 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
-
 }
 
 .logo {
   display: flex;
+  margin-top: 1rem;
   justify-content: center;
-  margin: auto;
-  margin-top: 0.5rem;
-  width: 90%;
+  width: 100%;
 }
 
 .imgLogo {
-  width: 90%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .navItems {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 3rem;
+  margin: 0 auto;
+  width: 85%;
 }
 
 .navItem {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
+  color: #dfa447;
+}
+
+.navLinkContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+
+.navIcon{
+  color: #dfa447;
+  margin: 0;
+  margin-right: 1rem;
 }
