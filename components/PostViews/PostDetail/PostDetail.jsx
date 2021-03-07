@@ -9,9 +9,10 @@ function PostDetail(props) {
     const [content, setContent] = useState("")
 
     useEffect(() => {
-        let postRef = db.collection("blogPosts").doc(props.match.params.id)
+        let postRef = db.collection("users").doc(props.user.uid).collection("blogPosts").doc(props.match.params.id)
 
         postRef.get().then(doc => {
+            console.log(doc.data)
             let { title, content } = doc.data()
             setTitle(title)
             setContent(content)
@@ -34,7 +35,7 @@ function PostDetail(props) {
                     </div>
 
                     <div className="deleteLink">
-                        <DeleteBtn id={props.match.params.id}/>
+                        <DeleteBtn id={props.match.params.id} user={props.user}/>
                     </div>
                 </div>
             )}

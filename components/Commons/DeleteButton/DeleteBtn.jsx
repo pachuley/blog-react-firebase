@@ -8,7 +8,7 @@ function DeleteBtn(props) {
     let history = useHistory()
 
     const onDelete = (event => {
-        let postRef = db.collection("blogPosts").doc(props.id);
+        let postRef = db.collection("users").doc(props.user.uid).collection("blogPosts").doc(props.id);
         postRef.delete();
         history.push("/")
     })

@@ -8,7 +8,7 @@ function PostEditForm(props) {
     const [content, setContent] = useState("")
 
     useEffect(() => {
-        let postRef = db.collection("blogPosts").doc(props.match.params.id)
+        let postRef = db.collection("users").doc(props.user.uid).collection("blogPosts").doc(props.match.params.id)
 
         postRef.get().then(doc => {
             let { title, content } = doc.data()
@@ -22,7 +22,7 @@ function PostEditForm(props) {
     let history = useHistory()
 
     const onEditPost = () => {
-        let editedPostRef = db.collection("blogPosts").doc(props.match.params.id)
+        let editedPostRef = db.collection("users").doc(props.user.uid).collection("blogPosts").doc(props.match.params.id)
         let payload = {title, content}
 
         editedPostRef.update(payload)
