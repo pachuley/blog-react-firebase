@@ -12,7 +12,7 @@ function PostCreatorForm(props) {
     let history = useHistory()
 
     const onCreatePost = () => {
-        let postRef = db.collection("blogPosts")
+        let postRef = db.collection("users").doc(props.user.uid).collection("blogPosts")
         let payload = {title, content}
 
         postRef.add(payload)

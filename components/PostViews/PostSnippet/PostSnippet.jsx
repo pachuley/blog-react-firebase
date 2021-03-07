@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom"
 import "./PostSnippet.css"
 
 const PostSnippet = (props) => {
+    console.log(props)
+
     return( 
         <div className="postSnippetContainer">
             <div className="postSnippetTitle">
@@ -11,7 +13,7 @@ const PostSnippet = (props) => {
             </div>
             <div>
                 {props.content.split("\n").map((paragraph, idx) => {
-                        return <p key={idx} className="postSnippetParagraph">{paragraph}</p>
+                        return <p key={props.id} className="postSnippetParagraph">{paragraph}</p>
                 })}
             </div>
             <div>                   

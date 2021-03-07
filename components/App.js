@@ -8,7 +8,7 @@ import PostEditForm from "./PostViews/PostEditForm/PostEditForm"
 import SideNavbar from "./Commons/SideNavbar/SideNavbar"
 import SignUp from "./AccountManagement/SignUp/SignUp"
 import LogIn from "./AccountManagement/LogIn/LogIn"
-
+import 'regenerator-runtime/runtime'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
 
   auth.onAuthStateChanged(function (user) {
     if(user) {
-      setUser(true)
+      setUser(user)
     } else {
       setUser(false)
     }
@@ -27,10 +27,10 @@ function App() {
       <SideNavbar user={user}/>
       <div className="mainSwitch"> 
         <Switch>
-          <Route path="/" exact render={() => <PostContainer />} />
-          <Route path="/create_post/" exact render={() => <PostCreatorForm />} />
+          <Route path="/" exact render={() => <PostContainer user={user}/>} />
+          <Route path="/create_post/" exact render={() => <PostCreatorForm user={user}/>} />
           <Route path="/post/:id" render={({ match }) => <PostDetail match={match} user={user}/>} />
-          <Route path="/edit_post/:id" render={({ match }) => <PostEditForm match={match}/>} />
+          <Route path="/edit_post/:id" render={({ match }) => <PostEditForm match={match} user={user}/>} />
           <Route path="/sign_up/" exact render={() => <SignUp />} />      
           <Route path="/log_in/" exact render={() => <LogIn />} />    
         </Switch>

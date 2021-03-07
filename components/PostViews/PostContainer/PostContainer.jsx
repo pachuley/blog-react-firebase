@@ -7,22 +7,27 @@ import "./PostContainer.css"
 function PostContainer(props) {
     
     const [blogPosts, setBlogPosts] = useState([])
+    console.log(blogPosts)
 
     useEffect(() => {
-        let postsRef = db.collection("blogPosts") 
-        postsRef
+
+        let postsRef = db.collection("users").doc(props.user.uid).collection("blogPosts")
+        const unsubscribe = postsRef
             .onSnapshot(posts => {
-                posts.forEach(post => {
-                    let data = post.data()
-                    let {id} = post
-                    let payload = {
-                        id,
-                        ...data
-                    }
-                    setBlogPosts((blogPosts) => [...blogPosts, payload])
-                })
+            let blogPostsArray = []
+            posts.forEach(post => {
+                let data = post.data()
+                let {id} = post
+                let payload = {
+                    id,
+                    ...data
+                }
+                blogPostsArray.push(payload)
             })
-    }, [])
+            setBlogPosts(blogPostsArray)
+        }) 
+        return () => unsubscribe()
+    }, [props.user.uid])
 
     return(
         <div className="postContainer">
@@ -31,13 +36,12 @@ function PostContainer(props) {
                 <hr className="headerHr"/>
             </div>
             <div className="postContentContainer">
-                {_.map(blogPosts, (article, idx) => (
-                    <div className="individualPosts">
+                {_.map(blogPosts, (post, idx) => (
+                    <div className="individualPosts" key={post.id}>
                         <PostSnippet 
-                            key={idx}
-                            id={article.id}
-                            title={article.title}
-                            content={article.content.substring(0, 200)+"..."}
+                            id={post.id}
+                            title={post.title}
+                            content={post.content.substring(0, 200)+"..."}
                         />
                     </div>
                 ))}

@@ -29,7 +29,7 @@ function LogIn(props) {
     return (
         <div className="logInContainer">       
             <div className="logInTitle">
-                <h1>Create your account</h1>
+                <h1>Log in to your account!</h1>
                 <hr className="logInHr"/>
             </div>
             <div className="logInForm">
