@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
-import { GiMountaintop, GiBlackFlag, GiAnchor, GiEntryDoor, GiExitDoor} from "react-icons/gi";
+import { GiMountaintop, GiBlackFlag, GiAnchor, GiBookmarklet, GiEntryDoor, GiExitDoor} from "react-icons/gi";
 import LogOut from "../../AccountManagement/LogOut/LogOut"
 import "./SideNavbar.css"
 
@@ -28,11 +28,19 @@ function SideNavbar(props) {
                         </NavLink>
                     </div>
                     {(props.user &&
-                        <div className="navLinkContainer">
-                            <GiBlackFlag size={20} className="navIcon"/>
-                            <NavLink to={`/create_post`}>
-                                <h4 className="navItem">New Chapter</h4>
-                            </NavLink>
+                        <div>
+                            <div className="navLinkContainer">
+                                <GiBookmarklet size={20} className="navIcon"/>
+                                <NavLink to={`/my_posts`}>
+                                    <h4 className="navItem">My Entries</h4>
+                                </NavLink>
+                            </div>
+                            <div className="navLinkContainer">
+                                <GiBlackFlag size={20} className="navIcon"/>
+                                <NavLink to={`/create_post`}>
+                                    <h4 className="navItem">New Chapter</h4>
+                                </NavLink>
+                            </div>
                         </div>
                     )}
                     {(props.user
