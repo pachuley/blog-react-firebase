@@ -17,7 +17,7 @@ const PostSnippet = (props) => {
                 })}
             </div>
             <div>                   
-                {<NavLink to={`/post/${props.id}`}>
+                {<NavLink to={`post/${props.id}`}>
                     <h5 className="postSnippetReadLink">Read Full Article</h5>
                 </NavLink>}                   
             </div>

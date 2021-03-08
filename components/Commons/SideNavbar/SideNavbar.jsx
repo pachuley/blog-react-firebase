@@ -17,7 +17,7 @@ function SideNavbar(props) {
                 <div className="navItems">
                     <div className="navLinkContainer">
                         <GiAnchor size={20} className="navIcon"/>
-                        <NavLink to={`/`}>
+                        <NavLink to={`/blogs/${props.user.uid}/posts`}>
                             <h4 className="navItem">Captain's Log</h4>
                         </NavLink>
                     </div>

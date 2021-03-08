@@ -5,11 +5,14 @@ import db from "../../../firebase"
 import "./PostDetail.css"
 
 function PostDetail(props) {
+    console.log(props)
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
 
+    let userId = props?.uid ? props.uid : props.match.params.uid
+    
     useEffect(() => {
-        let postRef = db.collection("users").doc(props.user.uid).collection("blogPosts").doc(props.match.params.id)
+        let postRef = db.collection("users").doc(userId).collection("blogPosts").doc(props.match.params.id)
 
         postRef.get().then(doc => {
             console.log(doc.data)
@@ -17,7 +20,7 @@ function PostDetail(props) {
             setTitle(title)
             setContent(content)
         })
-    })
+    }, [userId])
  
     return( 
         <div className="postDetailContainer">

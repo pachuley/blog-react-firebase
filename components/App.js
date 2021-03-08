@@ -27,9 +27,9 @@ function App() {
       <SideNavbar user={user}/>
       <div className="mainSwitch"> 
         <Switch>
-          <Route path="/" exact render={() => <PostContainer user={user}/>} />
           <Route path="/create_post/" exact render={() => <PostCreatorForm user={user}/>} />
-          <Route path="/post/:id" render={({ match }) => <PostDetail match={match} user={user}/>} />
+          <Route path="/blogs/:uid/posts" exact render={({ match }) => <PostContainer match={match} user={user}/>} />
+          <Route path="/blogs/:uid/post/:id" render={({ match }) => <PostDetail match={match} user={user}/>} />
           <Route path="/edit_post/:id" render={({ match }) => <PostEditForm match={match} user={user}/>} />
           <Route path="/sign_up/" exact render={() => <SignUp />} />      
           <Route path="/log_in/" exact render={() => <LogIn />} />    

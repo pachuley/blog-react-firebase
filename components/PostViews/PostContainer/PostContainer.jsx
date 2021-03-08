@@ -7,11 +7,10 @@ import "./PostContainer.css"
 function PostContainer(props) {
     
     const [blogPosts, setBlogPosts] = useState([])
-    console.log(blogPosts)
+    let userId = props?.user.id ? props.user.id : props.match.params.uid
 
     useEffect(() => {
-
-        let postsRef = db.collection("users").doc(props.user.uid).collection("blogPosts")
+        let postsRef = db.collection("users").doc(userId).collection("blogPosts")
         const unsubscribe = postsRef
             .onSnapshot(posts => {
             let blogPostsArray = []
@@ -27,7 +26,7 @@ function PostContainer(props) {
             setBlogPosts(blogPostsArray)
         }) 
         return () => unsubscribe()
-    }, [props.user.uid])
+    }, [userId])
 
     return(
         <div className="postContainer">
@@ -36,10 +35,11 @@ function PostContainer(props) {
                 <hr className="headerHr"/>
             </div>
             <div className="postContentContainer">
-                {_.map(blogPosts, (post, idx) => (
+                {_.map(blogPosts, (post) => (
                     <div className="individualPosts" key={post.id}>
                         <PostSnippet 
                             id={post.id}
+                            uid={userId}
                             title={post.title}
                             content={post.content.substring(0, 200)+"..."}
                         />
