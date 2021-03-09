@@ -5,11 +5,12 @@ import _ from "lodash"
 import "./MyPosts.css"
 
 function MyPosts(props) {
-    console.log(props.user.uid)
+
+    
     const [blogPosts, setBlogPosts] = useState([])
 
     useEffect(() => {
-        let postsRef = db.collection("users").doc(props.user.uid).collection("blogPosts")
+        let postsRef = db.collection("blogPosts").where("author", "==", props.user.email)
         const unsubscribe = postsRef
             .onSnapshot(posts => {
             let blogPostsArray = []

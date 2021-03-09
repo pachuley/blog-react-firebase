@@ -7,26 +7,29 @@ import "./PostContainer.css"
 function PostContainer(props) {
     
     const [blogPosts, setBlogPosts] = useState([])
-    let userId = props?.user.uid ? props.user.uid : props.match.params.uid
+    //let userId = props?.user.uid ? props.user.uid : props.match.params.uid
 
     useEffect(() => {
-        let postsRef = db.collection("users").doc(userId).collection("blogPosts")
-        const unsubscribe = postsRef
-            .onSnapshot(posts => {
-            let blogPostsArray = []
-            posts.forEach(post => {
-                let data = post.data()
-                let {id} = post
-                let payload = {
-                    id,
-                    ...data
-                }
-                blogPostsArray.push(payload)
+       
+        let postsRef = db.collection("blogPosts")
+        postsRef
+            .get()
+            .then((posts) => {
+                console.log(posts)
+                let uniqueAuthors = []
+                let allPosts = []
+                posts.forEach((post) => {
+                    const data = post.data()
+                    console.log(data)
+                    if (!uniqueAuthors.includes(data.author)){
+                        uniqueAuthors.push(data.author)
+                    }
+                    allPosts.push({id: post.id, ...data})
+                })
+                console.log(uniqueAuthors)
+                setBlogPosts(allPosts)
             })
-            setBlogPosts(blogPostsArray)
-        }) 
-        return () => unsubscribe()
-    }, [userId])
+    }, [])
 
     return(
         <div className="postContainer">
@@ -39,7 +42,6 @@ function PostContainer(props) {
                     <div className="individualPosts" key={post.id}>
                         <PostSnippet 
                             id={post.id}
-                            uid={userId}
                             title={post.title}
                             content={post.content.substring(0, 200)+"..."}
                         />

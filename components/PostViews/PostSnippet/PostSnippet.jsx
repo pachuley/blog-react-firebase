@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom"
 import "./PostSnippet.css"
 
 const PostSnippet = (props) => {
-    console.log(props)
 
     return( 
         <div className="postSnippetContainer">

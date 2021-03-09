@@ -4,6 +4,8 @@ import db from "../../../firebase"
 import "./PostCreatorForm.css";
 
 function PostCreatorForm(props) {
+
+    console.log(props.user)
     
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
@@ -12,8 +14,10 @@ function PostCreatorForm(props) {
     let history = useHistory()
 
     const onCreatePost = () => {
-        let postRef = db.collection("users").doc(props.user.uid).collection("blogPosts")
-        let payload = {title, content}
+
+        let postRef = db.collection("blogPosts")
+        //let postRef = db.collection("users").doc(props.user.uid).collection("blogPosts")
+        let payload = {title, content, author: props.user.email}
 
         postRef.add(payload)
             .then(function (doc) {

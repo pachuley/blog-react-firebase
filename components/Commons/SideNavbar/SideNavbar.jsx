@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
-import { GiMountaintop, GiBlackFlag, GiAnchor, GiBookmarklet, GiEntryDoor, GiExitDoor} from "react-icons/gi";
+import { GiMountaintop, GiBookshelf, GiCompass, GiBookmarklet, GiEntryDoor, GiExitDoor} from "react-icons/gi";
 import LogOut from "../../AccountManagement/LogOut/LogOut"
 import "./SideNavbar.css"
 
@@ -16,27 +16,27 @@ function SideNavbar(props) {
                 </div>
                 <div className="navItems">
                     <div className="navLinkContainer">
-                        <GiAnchor size={20} className="navIcon"/>
+                        <GiCompass size={20} className="navIcon"/>
                         <NavLink to={`/blogs/${props.user.uid}/posts`}>
-                            <h4 className="navItem">Captain's Log</h4>
-                        </NavLink>
-                    </div>
-                    <div className="navLinkContainer">
-                        <GiMountaintop size={20} className="navIcon"/>
-                        <NavLink to={`/aboutme`}>
-                            <h4 className="navItem">About Me</h4>
+                            <h4 className="navItem">Our Writers</h4>
                         </NavLink>
                     </div>
                     {(props.user &&
                         <div>
                             <div className="navLinkContainer">
-                                <GiBookmarklet size={20} className="navIcon"/>
+                                <GiMountaintop size={20} className="navIcon"/>
+                                <NavLink to={`/profile`}>
+                                    <h4 className="navItem">About Me</h4>
+                                </NavLink>
+                            </div>
+                            <div className="navLinkContainer">
+                                <GiBookshelf size={20} className="navIcon"/>
                                 <NavLink to={`/my_posts`}>
                                     <h4 className="navItem">My Entries</h4>
                                 </NavLink>
                             </div>
                             <div className="navLinkContainer">
-                                <GiBlackFlag size={20} className="navIcon"/>
+                                <GiBookmarklet size={20} className="navIcon"/>
                                 <NavLink to={`/create_post`}>
                                     <h4 className="navItem">New Chapter</h4>
                                 </NavLink>
