@@ -34,6 +34,18 @@
 }
 
 .individualPosts {
-    margin: 0 4%;
+    margin: 0 2%;
     width: 25%
 }
+
+@media screen and (max-width: 1110px) {
+    .individualPosts {
+      width: 30%;
+    }
+  }
+  
+  @media screen and (max-width: 850px) {
+    .individualPosts {
+      width: 45%;
+    }
+  }
