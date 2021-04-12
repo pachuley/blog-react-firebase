@@ -5,7 +5,7 @@ import PostContainer from "./PostViews/PostContainer/PostContainer"
 import PostDetail from "./PostViews/PostDetail/PostDetail"
 import PostCreatorForm from "./PostViews/PostCreatorForm/PostCreatorForm"
 import PostEditForm from "./PostViews/PostEditForm/PostEditForm"
-import MyPosts from "./PostViews/MyPosts/MyPosts"
+import AuthorPosts from "./PostViews/AuthorPosts/AuthorPosts"
 import SideNavbar from "./Commons/SideNavbar/SideNavbar"
 import SignUp from "./AccountManagement/SignUp/SignUp"
 import LogIn from "./AccountManagement/LogIn/LogIn"
@@ -34,7 +34,7 @@ function App() {
           <Route path="/create_post/" exact render={() => <PostCreatorForm user={user}/>} />
           <Route path="/blogs/:author/post/:id" render={({ match }) => <PostDetail match={match} user={user}/>} />
           <Route path="/edit_post/:id" render={({ match }) => <PostEditForm match={match} user={user}/>} />
-          <Route path="/my_posts" exact render={() => <MyPosts user={user}/>} />
+          <Route path="/author_posts/:email" exact render={({ match }) => <AuthorPosts match={match} user={user}/>} />
           <Route path="/sign_up/" exact render={() => <SignUp />} />
           <Route path="/log_in/" exact render={() => <LogIn />} />
           {/*<Route path="/profile" exact render={() => <ProfileForm user={user}/>} />*/}

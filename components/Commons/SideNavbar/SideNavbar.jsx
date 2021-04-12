@@ -5,7 +5,7 @@ import LogOut from "../../AccountManagement/LogOut/LogOut"
 import "./SideNavbar.css"
 
 function SideNavbar(props) {
-
+    console.log(props)
     return (
         <div className="navbarContainer">       
             <div className="siderContainer">
@@ -17,7 +17,7 @@ function SideNavbar(props) {
                 <div className="navItems">
                     <div className="navLinkContainer">
                         <GiCompass size={20} className="navIcon"/>
-                        <NavLink to={`/blogs/${props.user.uid}/posts`}>
+                        <NavLink to={`/writers`}>
                             <h4 className="navItem">Our Writers</h4>
                         </NavLink>
                     </div>
@@ -31,7 +31,7 @@ function SideNavbar(props) {
                             </div>
                             <div className="navLinkContainer">
                                 <GiBookshelf size={20} className="navIcon"/>
-                                <NavLink to={`/my_posts`}>
+                                <NavLink to={`/author_posts/${props.user.email}`}>
                                     <h4 className="navItem">My Entries</h4>
                                 </NavLink>
                             </div>

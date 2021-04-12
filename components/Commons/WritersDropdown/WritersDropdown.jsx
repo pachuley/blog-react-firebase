@@ -2,67 +2,48 @@ import React, { useEffect, useState } from "react";
 import db from "../../../firebase"
 import _ from "lodash"
 import "./WritersDropdown.css"
+import { NavLink } from "react-router-dom"
 
 function WritersDropdown(props) {
 
-    const [writers, setWriters] = useState([])
-    //let userId = props?.user.uid ? props.user.uid : props.match.params.uid
+    const [authors, setAuthors] = useState([])
 
     useEffect(() => {
-
-        db.collection("sports").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);
-            });
-        });
-        
-
-
-        /*const fetchUsers = async() => {
-            let response = db.collection("users");
-            let data = await response.listDocuments()
-            console.log("data", data)
-            console.log("data.docs", data.docs)
-        }*/
-
-
-        /*let response = db.collection("users");
-        let data = await response.get()
-        console.log("data", data)
-        console.log("data.docs", data.docs)
-        const unsubscribe = usersRef
-            .onSnapshot(users => {
-                console.log("aqui esta users del onsnapchot", users)
-            let usersArray = []
-            users.forEach(user => {
-                console.log("user en el foreach",user)
-                let data = user.data()
-                console.log(data)
-                let { uid } = user
+        let authorsRef = db.collection("blogPosts")
+        const unsubscribe = authorsRef
+            .onSnapshot(posts => {
+            let allAuthorsArray = []
+            posts.forEach(post => {
+                let data = post.data()
+                let {author} = data
                 let payload = {
-                    uid,
-                    ...data
+                    author,
                 }
-                usersArray.push(payload)
+                allAuthorsArray.push(payload)
             })
-            setWriters(usersArray)
+            let onlyAuthorsArray = allAuthorsArray.map(a => a.author);
+            let authorsSet = new Set(onlyAuthorsArray)
+            let uniqueAuthorsArray = [...authorsSet]
+            setAuthors(uniqueAuthorsArray)
         }) 
-        return () => unsubscribe()*/
-    }, [/*userId*/])
+        return () => unsubscribe()
+    }, [])
 
     return(
-        <div className="postContainer">
-            {/*<div className="headerContainer">
+        <div className="authorsContainer">
+            <div className="headerContainer">
                 <h1>Our Writers</h1>
                 <hr className="headerHr"/>
             </div>
-            <div className="postContentContainer">
-                {_.map(writers, (user) => (
-                    <div className="individualPosts" key={user.uid}>
-                        <h6>{user.email}</h6>
+            <div className="authorButtonContainer">
+                {_.map(authors, (author) => (
+                    <div className="myAuthors" key={author}>
+                        <NavLink to={`/author_posts/${author}`}>
+                            <button size="large" className="authorButton">{author}</button>
+                        </NavLink>
                     </div>
                 ))}
-                </div>*/}
+            </div>
         </div>
     )
 }

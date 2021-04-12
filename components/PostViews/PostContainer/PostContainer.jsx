@@ -4,10 +4,9 @@ import db from "../../../firebase"
 import _ from "lodash"
 import "./PostContainer.css"
 
-function PostContainer(props) {
+function PostContainer() {
     
     const [blogPosts, setBlogPosts] = useState([])
-    //let userId = props?.user.uid ? props.user.uid : props.match.params.uid
     useEffect(() => {
        
         let postsRef = db.collection("blogPosts")

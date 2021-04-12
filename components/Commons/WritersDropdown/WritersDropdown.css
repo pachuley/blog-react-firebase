@@ -1,0 +1,33 @@
+.authorsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    top: 0;
+}
+
+.authorButtonContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: auto;
+}
+
+.authorButton{
+    background-color: #e2e2dc;
+    border: 3px solid #254e70;
+    border-radius: 2px;
+    color: #f15156;
+    margin: 0 2rem;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+}

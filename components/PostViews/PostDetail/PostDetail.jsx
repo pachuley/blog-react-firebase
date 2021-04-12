@@ -11,8 +11,6 @@ function PostDetail(props) {
     const [author, setAuthor] = useState("")
 
     let userId = props?.uid ? props.uid : props.match.params.uid
-    
-
 
     useEffect(() => {
         let postRef = db.collection("blogPosts").doc(props.match.params.id)

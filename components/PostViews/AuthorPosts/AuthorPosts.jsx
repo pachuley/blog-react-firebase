@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import PostSnippet from "../PostSnippet/PostSnippet"
 import db from "../../../firebase"
 import _ from "lodash"
-import "./MyPosts.css"
+import "./AuthorPosts.css"
 
 function MyPosts(props) {
     console.log(props)
-    
     const [blogPosts, setBlogPosts] = useState([])
 
     useEffect(() => {
-        let postsRef = db.collection("blogPosts").where("author", "==", props.user.email)
+        let postsRef = db.collection("blogPosts").where("author", "==", props.match.params.email)
         const unsubscribe = postsRef
             .onSnapshot(posts => {
             let blogPostsArray = []
@@ -26,7 +25,7 @@ function MyPosts(props) {
             setBlogPosts(blogPostsArray)
         }) 
         return () => unsubscribe()
-    }, [props.user.uid])
+    }, [props.user.email])
 
     return(
         <div className="postContainer">
