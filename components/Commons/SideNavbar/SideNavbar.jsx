@@ -24,12 +24,6 @@ function SideNavbar(props) {
                     {(props.user &&
                         <div>
                             <div className="navLinkContainer">
-                                <GiMountaintop size={20} className="navIcon"/>
-                                <NavLink to={`/profile`}>
-                                    <h4 className="navItem">About Me</h4>
-                                </NavLink>
-                            </div>
-                            <div className="navLinkContainer">
                                 <GiBookshelf size={20} className="navIcon"/>
                                 <NavLink to={`/author_posts/${props.user.email}`}>
                                     <h4 className="navItem">My Entries</h4>
