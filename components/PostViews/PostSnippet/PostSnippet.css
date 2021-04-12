@@ -23,6 +23,12 @@
     margin-bottom: 0;
 }
 
+.postSubtitle {
+    margin: 0.5rem auto;
+    color: #dfa447;
+    cursor: pointer;
+}
+
 .postSnippetParagraph {
     text-align: justify;
     margin-bottom: 0.8rem;

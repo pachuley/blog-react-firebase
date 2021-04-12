@@ -16,7 +16,6 @@ function PostDetail(props) {
         let postRef = db.collection("blogPosts").doc(props.match.params.id)
 
         postRef.get().then(doc => {
-            console.log(doc.data)
             let { title, content, author } = doc.data()
             setTitle(title)
             setContent(content)

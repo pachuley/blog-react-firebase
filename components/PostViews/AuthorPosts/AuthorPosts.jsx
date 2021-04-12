@@ -4,8 +4,7 @@ import db from "../../../firebase"
 import _ from "lodash"
 import "./AuthorPosts.css"
 
-function MyPosts(props) {
-    console.log(props)
+function AuthorPosts(props) {
     const [blogPosts, setBlogPosts] = useState([])
 
     useEffect(() => {
@@ -30,7 +29,7 @@ function MyPosts(props) {
     return(
         <div className="postContainer">
             <div className="headerContainer">
-                <h1>My Entries</h1>
+                <h1>{props.match.params.email}'s Entries</h1>
                 <hr className="headerHr"/>
             </div>
             <div className="postContentContainer">
@@ -48,4 +47,4 @@ function MyPosts(props) {
         </div>
     )
 }
-export default MyPosts;
+export default AuthorPosts;

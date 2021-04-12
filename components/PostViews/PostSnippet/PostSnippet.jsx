@@ -8,10 +8,12 @@ const PostSnippet = (props) => {
             <div className="postSnippetTitle">
                 <h3>{props.title}</h3>
                 <hr className="postSnippetHr"/>
-                <h6>by: {props.author}</h6>
+                <NavLink to={`/author_posts/${props.author}`}>
+                    <h6 className="postSubtitle">by: {props.author}</h6>
+                </NavLink>
             </div>
             <div>
-                {props.content.split("\n").map((paragraph, idx) => {
+                {props.content.split("\n").map((paragraph) => {
                         return <p key={props.id} className="postSnippetParagraph">{paragraph}</p>
                 })}
             </div>
