@@ -4,30 +4,27 @@ import db from "../../../firebase"
 import _ from "lodash"
 import "./PostContainer.css"
 
-function PostContainer(props) {
+function PostContainer() {
     
     const [blogPosts, setBlogPosts] = useState([])
-    console.log(blogPosts)
-
     useEffect(() => {
-
-        let postsRef = db.collection("users").doc(props.user.uid).collection("blogPosts")
-        const unsubscribe = postsRef
-            .onSnapshot(posts => {
-            let blogPostsArray = []
-            posts.forEach(post => {
-                let data = post.data()
-                let {id} = post
-                let payload = {
-                    id,
-                    ...data
-                }
-                blogPostsArray.push(payload)
+       
+        let postsRef = db.collection("blogPosts")
+        postsRef
+            .get()
+            .then((posts) => {
+                let uniqueAuthors = []
+                let allPosts = []
+                posts.forEach((post) => {
+                    const data = post.data()
+                    if (!uniqueAuthors.includes(data.author)){
+                        uniqueAuthors.push(data.author)
+                    }
+                    allPosts.push({id: post.id, ...data})
+                })
+                setBlogPosts(allPosts)
             })
-            setBlogPosts(blogPostsArray)
-        }) 
-        return () => unsubscribe()
-    }, [props.user.uid])
+    }, [])
 
     return(
         <div className="postContainer">
@@ -36,12 +33,13 @@ function PostContainer(props) {
                 <hr className="headerHr"/>
             </div>
             <div className="postContentContainer">
-                {_.map(blogPosts, (post, idx) => (
+                {_.map(blogPosts, (post) => (
                     <div className="individualPosts" key={post.id}>
                         <PostSnippet 
                             id={post.id}
                             title={post.title}
                             content={post.content.substring(0, 200)+"..."}
+                            author={post.author}
                         />
                     </div>
                 ))}
