@@ -4,14 +4,12 @@ import { useHistory } from "react-router"
 import "./ProfileForm.css";
 
 function ProfileForm(props) {
-    
-    console.log(props.user)
+
     const [username, setUsername] = useState("")
     const [bio, setBio] = useState("")
 
     useEffect(() => {
         let postRef = db.collection("users").doc(props.user.uid).collection("bio").doc("userInfo")
-        console.log(postRef)
 
         postRef.get().then(doc => {
             let { username, bio } = doc.data()

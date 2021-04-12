@@ -32,7 +32,7 @@ function App() {
         <Switch>
           <Route path="/" exact render={() => <PostContainer user={user}/>} />
           <Route path="/create_post/" exact render={() => <PostCreatorForm user={user}/>} />
-          <Route path="/blogs/:uid/post/:id" render={({ match }) => <PostDetail match={match} user={user}/>} />
+          <Route path="/blogs/:author/post/:id" render={({ match }) => <PostDetail match={match} user={user}/>} />
           <Route path="/edit_post/:id" render={({ match }) => <PostEditForm match={match} user={user}/>} />
           <Route path="/my_posts" exact render={() => <MyPosts user={user}/>} />
           <Route path="/sign_up/" exact render={() => <SignUp />} />

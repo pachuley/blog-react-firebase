@@ -4,8 +4,6 @@ import db from "../../../firebase"
 import "./PostCreatorForm.css";
 
 function PostCreatorForm(props) {
-
-    console.log(props.user)
     
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")

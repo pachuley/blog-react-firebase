@@ -8,25 +8,21 @@ function PostContainer(props) {
     
     const [blogPosts, setBlogPosts] = useState([])
     //let userId = props?.user.uid ? props.user.uid : props.match.params.uid
-
     useEffect(() => {
        
         let postsRef = db.collection("blogPosts")
         postsRef
             .get()
             .then((posts) => {
-                console.log(posts)
                 let uniqueAuthors = []
                 let allPosts = []
                 posts.forEach((post) => {
                     const data = post.data()
-                    console.log(data)
                     if (!uniqueAuthors.includes(data.author)){
                         uniqueAuthors.push(data.author)
                     }
                     allPosts.push({id: post.id, ...data})
                 })
-                console.log(uniqueAuthors)
                 setBlogPosts(allPosts)
             })
     }, [])
@@ -44,6 +40,7 @@ function PostContainer(props) {
                             id={post.id}
                             title={post.title}
                             content={post.content.substring(0, 200)+"..."}
+                            author={post.author}
                         />
                     </div>
                 ))}

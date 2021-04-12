@@ -5,20 +5,24 @@ import db from "../../../firebase"
 import "./PostDetail.css"
 
 function PostDetail(props) {
-    console.log(props)
+
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
+    const [author, setAuthor] = useState("")
 
     let userId = props?.uid ? props.uid : props.match.params.uid
     
+
+
     useEffect(() => {
-        let postRef = db.collection("users").doc(userId).collection("blogPosts").doc(props.match.params.id)
+        let postRef = db.collection("blogPosts").doc(props.match.params.id)
 
         postRef.get().then(doc => {
             console.log(doc.data)
-            let { title, content } = doc.data()
+            let { title, content, author } = doc.data()
             setTitle(title)
             setContent(content)
+            setAuthor(author)
         })
     }, [userId])
  
@@ -27,16 +31,15 @@ function PostDetail(props) {
             <div className="postDetailTitleContainer">
                 <h1>{title}</h1>
                 <hr className="postDetailHr"/>
+                <h4>by: {author}</h4>
             </div>
-
-            {(props.user &&
+            {(props.match.params.author === props.user.email &&
                 <div className="editLinksContainer"> 
                     <div className="editLink">
                         {<NavLink to={`/edit_post/${props.match.params.id}`}>
                             <h4 className="postEditLink">Edit</h4>
                         </NavLink>}
                     </div>
-
                     <div className="deleteLink">
                         <DeleteBtn id={props.match.params.id} user={props.user}/>
                     </div>

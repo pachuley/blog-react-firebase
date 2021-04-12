@@ -5,7 +5,7 @@ import _ from "lodash"
 import "./MyPosts.css"
 
 function MyPosts(props) {
-
+    console.log(props)
     
     const [blogPosts, setBlogPosts] = useState([])
 
@@ -39,7 +39,7 @@ function MyPosts(props) {
                     <div className="myPosts" key={post.id}>
                         <PostSnippet 
                             id={post.id}
-                            uid={props.user.uid}
+                            author={post.author}
                             title={post.title}
                             content={post.content.substring(0, 1000)+"..."}
                         />
