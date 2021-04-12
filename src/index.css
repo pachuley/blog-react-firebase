@@ -30,106 +30,6 @@ a {
     transition: 0.5s;
     text-decoration: none;
 }
-
-.navbarContainer {
-    display: flex;
-    flex-direction: column;
-    width: 15.2%;
-    margin: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    height: 100%;
-    min-height: '100vh';
-    background-color: #254e70;
-  }
-  
-  .siderContainer {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      width: 100%;
-  }
-  
-  .logo {
-    display: flex;
-    margin-top: 1rem;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .imgLogo {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .navItems {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    width: 85%;
-  }
-  
-  .navItem {
-    margin: 0.5rem 0;
-    color: #dfa447;
-  }
-  
-  .navLinkContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 95%;
-  }
-  
-  .navIcon{
-    color: #dfa447;
-    margin: 0;
-    margin-right: 1rem;
-  }
-
-.postContainer {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: flex-start;
-    align-content: center;
-}
-
-.headerContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 0;
-    margin-bottom: 2rem;
-    width: 100%;
-    font-weight: 600;
-    font-size: x-large;
-}
-
-.headerHr {
-    width: 12%;
-    border: 4px solid #f15156;
-    margin-bottom: 0;
-}
-
-.postContentContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    padding: auto;
-}
-
-.individualPosts {
-    margin: 0 4%;
-    width: 25%
-}
-
   
 a:hover, a:active, a:focus {
     color: #ffc15e;
@@ -165,7 +65,20 @@ h2, h3, h4, h5, h6 {
     flex-direction: column;
     justify-content: center;
     width: 80%;
-    margin-left: 15.2%;
+    margin-left: auto;
     padding: 2rem;
     top: 0;
+}
+
+@media screen and (max-width: 1110px) {
+  .mainSwitch {
+    width: 80%;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .mainSwitch {
+    width: 73%;
+  }
 }

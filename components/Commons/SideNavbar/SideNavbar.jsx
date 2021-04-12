@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
-import { GiMountaintop, GiBookshelf, GiCompass, GiBookmarklet, GiEntryDoor, GiExitDoor} from "react-icons/gi";
+import { GiBookshelf, GiCompass, GiBookmarklet, GiEntryDoor, GiExitDoor} from "react-icons/gi";
 import LogOut from "../../AccountManagement/LogOut/LogOut"
 import "./SideNavbar.css"
 
