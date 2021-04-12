@@ -5,7 +5,7 @@ import LogOut from "../../AccountManagement/LogOut/LogOut"
 import "./SideNavbar.css"
 
 function SideNavbar(props) {
-    console.log(props)
+
     return (
         <div className="navbarContainer">       
             <div className="siderContainer">
