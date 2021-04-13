@@ -73,4 +73,11 @@
   .mainSwitch {
     width: 28%;
   }
+  .navItem {
+    margin: 0.1rem 0;
+    font-size:smaller;
+  }
+  .navIcon{
+    margin-right: 0.3rem;
+  }
 }

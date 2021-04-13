@@ -6,8 +6,8 @@
   "scripts": {
     "start": "parcel ./index.html",
     "copy:css": "cpy 'src/index.css' 'dist'",
-    "build:main": "parcel build src/index.js --no-content-hash --no-minify --no-cache --no-source-maps --out-dir dist",
-    "prod": "npm-run-all build:* copy:*"
+    "build": "parcel build src/index.js --no-content-hash --no-minify --no-cache --no-source-maps --out-dir dist",
+    "prod": "npm-run-all build copy:*"
   },
   "keywords": [],
   "author": "",
